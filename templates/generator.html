@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="pure-min.css" />
+    <link rel="stylesheet" href="layout.css" />
+</head>
+<body>
+    <div class="content pure-g-r">
+        <header class="pure-u-1">
+            <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+                <a class="pure-menu-heading" href="">Stubber: The node stub service</a>
+
+                <ul>
+                    <li class="pure-menu-selected"><a href="#">Home</a></li>
+                    <li><a href="#">Docs</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section role="main" class="content pure-u-1">
+            <div class="pure-g-r">
+                <div class="pure-u-1">
+                    <h1>{{title}}</h1>
+                </div>
+            </div>
+            <div class="pure-g-r">
+                <div class="pure-u-1">
+                    <form action="{{action}}" method="POST" class="pure-form-aligned">
+                        <div class="pure-control-group">
+                            <label for="service_name">Service name:</label>
+                            <input id="service_name" type="text" placeholder="The name of your service" />
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="service_request">Service body:</label>
+                            <input id="service_request" type="text" placeholder="The request body you are sending" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
