@@ -1,7 +1,12 @@
 Stubber - A node.js SOAP Stubber
 --------------------------------
 
-Stubber provides an easy to maintain method of stubbing SOAP services.
+Stubber provides an easy to maintain method of stubbing SOAP services. It is designed to sit in your test environment and act as
+a stub for the services you haven't build yet, the third parties you haven't connected to, or the ones you know don't have the
+test data you need.
+
+The idea is simple, for a given SOAP request, respond with a given SOAP response. One endpoint, multiple responses. Easy to add new
+responders and easily able to scale.
 
 Usage:
 ------
@@ -42,3 +47,4 @@ Todo:
 * Stub REST services too
 * Make endpoint and port a configuration item
 * Puppet manifest for deploying Stubber to your target environment
+* Load test
