@@ -13,7 +13,7 @@ Usage:
 
 
 **Note: Whitespace in the SOAP request is currently important, so you may get strange results depending on indentations.
-If in doubt, make sure the client you generate the hash from, is the same you'll be using for making the "real" service call. **
+If in doubt, make sure the client you generate the hash from, is the same you'll be using for making the "real" service call.**
 
 
 Example:
