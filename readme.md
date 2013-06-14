@@ -11,6 +11,11 @@ Usage:
 * In stubber/public, create a file with the name [hash].xml, with a contents of the desired SOAP response for your service
 * Update your SOAP client to point at http://127.0.0.1:9999, make the request, and see the response returned to you
 
+
+**Note: Whitespace in the SOAP request is currently important, so you may get strange results depending on indentations.
+If in doubt, make sure the client you generate the hash from, is the same you'll be using for making the "real" service call. **
+
+
 Example:
 --------
 Use the following SOAP request to http://127.0.0.1:9999:
@@ -24,8 +29,6 @@ Use the following SOAP request to http://127.0.0.1:9999:
 
 You should see the response from stubber/public/1de54fda8916d82fd4624afc15803d5932d10ad6.xml
 
-Note: Whitespace is currently important, so you may get strange results depending on indentations.
-
 Todo:
 -----
 * Add example service
@@ -38,3 +41,4 @@ Todo:
   getting raw XML is tricky
 * Stub REST services too
 * Make endpoint and port a configuration item
+* Puppet manifest for deploying Stubber to your target environment
