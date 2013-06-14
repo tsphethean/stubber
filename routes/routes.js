@@ -1,5 +1,5 @@
 var Hapi = require('hapi');
-
+var crypto = require('crypto');
 
 var serveStatics = {
     handler: function () {
@@ -24,21 +24,23 @@ var stubResponder = {
     payload: 'parse'
 };
 
-var generateHash = {
+
+var generateHashRepsonse = {
     handler: function () {
-        this.reply.view('generator.html', {
-            title: 'Subber: Stub generator',
-            action: '/stub-generator'
-        });
-    }
+        var sha = crypto.createHash('sha1');
+        sha.update(this.payload);
+        var hash = sha.digest('hex');
+        this.reply(hash);
+    },
+    payload: 'parse'
 };
 
 // Define the routes.
 module.exports = [
     {
-        method: 'GET',
+        method: 'POST',
         path: '/stub-generator',
-        config: generateHash
+        config: generateHashRepsonse
     },
     {
         method: 'GET',

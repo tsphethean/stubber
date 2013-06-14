@@ -1,5 +1,4 @@
 var Hapi = require('hapi');
-var crypto = require('crypto');
 var routes = require('./routes/routes');
 
 // Setup handlebar default options.
@@ -13,7 +12,7 @@ var options = {
 };
 
 // Create a server with a host and port.
-var server = Hapi.createServer('localhost', 8000, options);
+var server = Hapi.createServer('localhost', 9999, options);
 server.addRoutes(routes);
 server.start();
 
