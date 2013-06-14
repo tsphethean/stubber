@@ -5,14 +5,31 @@ Stubber provides an easy to maintain method of stubbing SOAP services.
 
 Usage:
 ------
+* Start node server.js
 * Prepare your SOAP request
 * Point your SOAP client to http://127.0.0.1:9999/stub-generator (or modify server.js to run on whatever host:port combination you want), and note the hash value return in the response body
 * In stubber/public, create a file with the name [hash].xml, with a contents of the desired SOAP response for your service
 * Update your SOAP client to point at http://127.0.0.1:9999, make the request, and see the response returned to you
 
+Example:
+--------
+Use the following SOAP request to http://127.0.0.1:9999:
+
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+        <soapenv:Header/>
+        <soapenv:Body>
+          <ExampleService/>
+        </soapenv:Body>
+    </soapenv:Envelope>
+
+You should see the response from stubber/public/1de54fda8916d82fd4624afc15803d5932d10ad6.xml
+
+Note: Whitespace is currently important, so you may get strange results depending on indentations.
+
 Todo:
 -----
 * Add example service
+* Fix potential whitespace issues
 * Create definition library file documenting services, requests and responses for ease of management
     - need to know which response belongs to which request, and what that is designed to simulate
 * Create management form for adding new services
